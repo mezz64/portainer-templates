@@ -1,0 +1,47 @@
+[
+  {
+    "type": "container",
+    "title": "Unifi",
+    "description": null,
+    "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/unifi-icon.png",
+    "image": "linuxserver/unifi:latest",
+    "category": [
+        "Network:Management",
+        "Tools:"
+    ],
+    "ports": [
+        "3478/udp",
+        "10001/udp",
+        "8080/tcp",
+        "8081/tcp",
+        "8443/tcp",
+        "8843/tcp",
+        "8880/tcp"
+    ],
+    "volumes": [
+        "/config"
+    ],
+    "env": [
+        {
+            "name": "PUID",
+            "label": "PUID",
+            "set": ""
+        },
+        {
+            "name": "PGID",
+            "label": "PGID",
+            "set": ""
+        }
+    ]
+  },
+  {
+    "type": "container",
+    "title": "MQTT-Dasher",
+    "description": "Catch dash button presses",
+    "categories": [""Network:Management"],
+    "platform": "linux",
+    "image": "philipkazmeier/mqtt-dasher:latest",
+    "network": "host",
+    "volumes": ["/opt/mqtt-dasher/config.yml"]
+  }
+]
